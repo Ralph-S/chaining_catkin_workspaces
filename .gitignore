@@ -1,0 +1,14 @@
+robot_msg_ws/.catkin_tools/
+robot_msg_ws/build/
+robot_msg_ws/devel/
+robot_msg_ws/logs/
+
+decision_making_ws/.catkin_tools/
+decision_making_ws/build/
+decision_making_ws/devel/
+decision_making_ws/logs/
+
+backend_ws/.catkin_tools/
+backend_ws/build/
+backend_ws/devel/
+backend_ws/logs/

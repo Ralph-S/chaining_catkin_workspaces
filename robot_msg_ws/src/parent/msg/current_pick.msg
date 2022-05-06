@@ -1,0 +1,9 @@
+string      order_id
+string      assembly_start_counter
+string      part_number
+string      part_number_description
+string      part_family
+string      derivat
+string      vin17
+string      destination_slot
+string      destination_sub_slot

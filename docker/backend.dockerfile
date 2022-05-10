@@ -2,7 +2,7 @@
 FROM ros:noetic
 
 # Set Author
-LABEL author="Spexal LLC"
+LABEL author="Research_Structure"
 
 # Setup Distro Env
 ENV ROS_DISTRO noetic
@@ -31,16 +31,6 @@ WORKDIR /root/robot_ws
 
 #set Robot_ws_env
 ENV ROBOT_WS_ENV /root/robot_ws
-
-COPY ./robotWS /root/robot_ws/
-COPY ./config.yaml /root/robot_ws/src/backend_scripts/src
-COPY ./data.json /root/robot_ws/src/backend_scripts/src
-COPY ./database.py /root/robot_ws/src/backend_scripts/src
-COPY ./generic_robot.py /root/robot_ws/src/backend_scripts/src
-COPY ./launch_backend.bash /root/robot_ws/src/backend_scripts/src
-COPY ./main_fastapi.py /root/robot_ws/src/backend_scripts/src
-COPY ./requirements.txt /root/robot_ws/src/backend_scripts/src
-COPY ./robot.py /root/robot_ws/src/backend_scripts/src
 
 WORKDIR /root/robot_ws/
 RUN catkin init

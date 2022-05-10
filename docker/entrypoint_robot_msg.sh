@@ -2,8 +2,10 @@
 set -e
 
 # launching state machine...
-echo 'Decision making...'
+echo 'Robot Workspace...' 
 
 source /root/robot_msg_ws/devel/setup.bash
+
+roscore
 
 eval "bash"

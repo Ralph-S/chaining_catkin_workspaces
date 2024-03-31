@@ -1,0 +1,79 @@
+version: '3.4'
+services:
+    robot_msg:
+        image: robot_msg:test_1
+        container_name: robot_msg
+        network_mode: host
+        restart: "no"
+        privileged: true
+        environment:
+            - DISPLAY
+            - QT_X11_NO_MITSHM=1
+            - XAUTHORITY=/tmp/.docker.xauth
+            - LOCATION=$LOCATION
+            - SYS_NAME=$SYS_NAME
+            - ENVIRONMENT=$ENVIRONMENT
+            - ROBOT_HOME_PATH=/home/q541740/Desktop/structure_research/robot_msg_ws
+            - TZ=Europe/Berlin
+        devices:
+            - "/dev:/dev"
+        volumes:
+            - /dev/bus/usb:/dev/bus/usb
+            - /tmp/.X11-unix:/tmp/.X11-unix:rw
+            - /tmp/.docker.xauth:/tmp/.docker.xauth
+            - /home/.ros/log:/root/.ros/log
+        tty: true
+        healthcheck:
+            test: "exit 0"
+    
+    backend:
+        image: backend:test_1
+        container_name: backend
+        network_mode: host
+        restart: "no"
+        privileged: true
+        environment:
+            - DISPLAY
+            - QT_X11_NO_MITSHM=1
+            - XAUTHORITY=/tmp/.docker.xauth
+            - LOCATION=$LOCATION
+            - SYS_NAME=$SYS_NAME
+            - ENVIRONMENT=$ENVIRONMENT
+            - ROBOT_HOME_PATH=/home/q541740/Desktop/structure_research/backend_ws
+            - TZ=Europe/Berlin
+        devices:
+            - "/dev:/dev"
+        volumes:
+            - /dev/bus/usb:/dev/bus/usb
+            - /tmp/.X11-unix:/tmp/.X11-unix:rw
+            - /tmp/.docker.xauth:/tmp/.docker.xauth
+            - /home/.ros/log:/root/.ros/log
+        tty: true
+        healthcheck:
+            test: "exit 0"
+
+    decision_making:
+        image: decision_making:test_1
+        container_name: decision_making
+        network_mode: host
+        restart: "no"
+        privileged: true
+        environment:
+            - DISPLAY
+            - QT_X11_NO_MITSHM=1
+            - XAUTHORITY=/tmp/.docker.xauth
+            - LOCATION=$LOCATION
+            - SYS_NAME=$SYS_NAME
+            - ENVIRONMENT=$ENVIRONMENT
+            - ROBOT_HOME_PATH=/home/q541740/Desktop/structure_research/decision_making_ws
+            - TZ=Europe/Berlin
+        devices:
+            - "/dev:/dev"
+        volumes:
+            - /dev/bus/usb:/dev/bus/usb
+            - /tmp/.X11-unix:/tmp/.X11-unix:rw
+            - /tmp/.docker.xauth:/tmp/.docker.xauth
+            - /home/.ros/log:/root/.ros/log
+        tty: true
+        healthcheck:
+            test: "exit 0"
